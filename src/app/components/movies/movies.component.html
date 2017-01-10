@@ -16,7 +16,7 @@
     <div class="panel-body">
       <div class="row">
         <div *ngFor="let movie of searchResults;let i = index" class="col-md-2">
-          <div *ngIf="i < 10">
+          <div *ngIf="i < 6">
             <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
             <h4>{{movie.title}}</h4>
             <p>{{movie.release_date}}</p>
@@ -31,10 +31,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Popular Movies</h3>
-    <div class="panel-body">
+    <div class="panel-body" style="height: auto;">
       <div class="row">
         <div *ngFor="let movie of popularList;let i = index" class="col-md-2">
-          <div *ngIf="i < 10">
+          <div *ngIf="i < 6">
             <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
             <h4>{{movie.title}}</h4>
             <p>{{movie.release_date}}</p>
@@ -52,7 +52,7 @@
     <div class="panel-body">
       <div class="row">
         <div *ngFor="let movie of theatresList;let i = index" class="col-md-2">
-          <div *ngIf="i < 10">
+          <div *ngIf="i < 6">
             <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
             <h4>{{movie.title}}</h4>
             <p>{{movie.release_date}}</p>
