@@ -13,6 +13,11 @@ export class MovieService {
     console.log('MovieService Initilalized');
   }
 
+  GetMovie(id: string){
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'?callback=JSONP_CALLBACK&api_key='+this.apiKey)
+      .map(res => res.json());
+  }
+
   /* Get popular movies*/
   GetPopularMovies(){
     return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&sort_by=popularity.desc&api_key='+this.apiKey)
@@ -30,4 +35,5 @@ export class MovieService {
     return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query='+search+'&sort_by=popularity.desc&api_key='+this.apiKey)
       .map(res => res.json());
   }
+
 }
