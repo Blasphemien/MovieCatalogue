@@ -5,6 +5,7 @@ import { MovieComponent } from "../components/movie/movie.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component: MoviesComponent},
+  {path: 'home', component: MoviesComponent},
   {path:'movie/:id', component: MovieComponent}
 ];
 
