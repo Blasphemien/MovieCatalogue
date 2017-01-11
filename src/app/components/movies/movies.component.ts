@@ -10,6 +10,7 @@ export class MoviesComponent implements OnInit {
 
   popularList: Array<Object>;
   theatresList: Array<Object>;
+  highestRatedRatedRList: Array<Object>;
   searchString: string;
   searchResults: Array<Object>;
 
@@ -17,6 +18,7 @@ export class MoviesComponent implements OnInit {
   constructor(private _movieService: MovieService) {
     this._movieService.GetPopularMovies().subscribe(res => {this.popularList = res.results;});
     this._movieService.GetMoviesInTheaters().subscribe(res => {this.theatresList = res.results;});
+    this._movieService.GetHighestRatedRatedRMovies().subscribe(res => {this.highestRatedRatedRList = res.results;});
   }
 
   /* Pass query string to search */

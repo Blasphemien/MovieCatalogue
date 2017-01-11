@@ -30,6 +30,12 @@ export class MovieService {
       .map(res => res.json());
   }
 
+  /* Get highest rated movies rated 'R'*/
+  GetHighestRatedRatedRMovies(){
+    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&certification_country=US&certification=R&sort_by=vote_average.desc&primary_release_date.gte=2015-01-01&primary_release_date.lte=2017-01-01&api_key='+this.apiKey)
+      .map(res => res.json());
+  }
+
   /* Search for movies */
   SearchMovies(search: string){
     return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query='+search+'&sort_by=popularity.desc&api_key='+this.apiKey)
